@@ -1,6 +1,13 @@
 {
   "devDependencies": {
     "angular": "^1.4.7",
-    "express": "^4.13.3"
-  }
+    "babel-core": "^6.2.1",
+    "babel-loader": "^6.2.0",
+    "express": "^4.13.3",
+    "firebase": "^2.3.2",
+    "raw-loader": "^0.5.1",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "private": true
 }
