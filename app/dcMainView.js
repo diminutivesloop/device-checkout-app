@@ -1,21 +1,24 @@
 module.exports = function(dataService) {
 	function dcMainViewController() {
-		this.addButtonClicked = function() {
-			dataService.addDevice('DeviceName');
+		var vm = this;
+		vm.deviceName = '';
+		vm.addButtonClicked = function() {
+			dataService.addDevice(vm.deviceName);
 		}
 
-		this.getDevices = function() {
+		vm.getDevices = function() {
 			return dataService.getDevices();
 		}
 	}
 	return {
 		restrict: 'E',
-		template: [`<button ng-click='vm.addButtonClicked()'>Add</button>`,
-		`<table ng-repeat='device in vm.getDevices()'>`,
-			`<tr>`,
-				`<td>{{ device.name }}</td>`,
-			`</tr>`,
-		`</table>`].join(''),
+		template: `<input ng-model="vm.deviceName"></input>
+		<button ng-click="vm.addButtonClicked()">Add</button>
+		<table ng-repeat="device in vm.getDevices()">
+			<tr>
+				<td>{{ device.name }}</td>
+			</tr>
+		</table>`,
 		controller: dcMainViewController,
 		controllerAs: 'vm',
 		scope: {}
