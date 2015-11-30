@@ -6,5 +6,6 @@ Simple webapp for tracking usage of company-owned testing devices
 - express
 
 ### Getting Started
-- Setup node modules: ```npm install``` 
-- Run the express server on localhost: ```node app.js```
+- Setup node modules by running: ```npm install``` 
+- Package the project by running: ```webpack```
+- Run the project by opening index.html in the root of the project
