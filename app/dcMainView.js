@@ -1,4 +1,4 @@
-module.exports = function(dataService) {
+function dcMainView(dataService) {
 	function dcMainViewController() {
 		var vm = this;
 		vm.deviceName = '';
@@ -25,5 +25,6 @@ module.exports = function(dataService) {
 	};
 };
 
+dcMainView.$inject = ['dataService'];
 
-	
+module.exports = dcMainView;

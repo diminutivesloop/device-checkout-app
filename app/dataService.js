@@ -1,4 +1,4 @@
-module.exports = function($rootScope) {
+function dataService($rootScope) {
 	var dataService = this;
 	var ref = new Firebase('https://brilliant-heat-1213.firebaseio.com/');
 	var devicesRef = ref.child('devices');
@@ -25,3 +25,7 @@ module.exports = function($rootScope) {
 		return devices;
 	};
 }
+
+dataService.$inject = ['$rootScope'];
+
+module.exports = dataService;
