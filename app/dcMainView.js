@@ -1,4 +1,4 @@
-angular.module('dcApp', [])
+angular.module('dcApp')
 	.directive('dcMainView', function() {
 		return {
 			restrict: 'E',
