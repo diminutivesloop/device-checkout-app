@@ -2,7 +2,7 @@ angular.module('dcApp', [])
 	.directive('dcMainView', function() {
 		return {
 			restrict: 'E',
-			templateUrl: 'dcMainView.html',
+			templateUrl: 'app/dcMainView.html',
 			controller: 'dcMainViewController',
 			controllerAs: 'vm',
 			scope: {}
