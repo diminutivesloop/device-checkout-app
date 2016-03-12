@@ -8,16 +8,15 @@ angular.module('dcApp', [])
 			scope: {}
 		};
 	})
-	.controller('dcMainViewController', function() {
-		var devices = [];
+	.controller('dcMainViewController', function(dcModelService) {
 		var counter = 0;
 
 		this.addButtonClicked = function() {
-			devices.push({name: 'device ' + counter});
+			dcModelService.createDevice('device ' + counter);
 			counter++;
 		}
 
 		this.getDevices = function() {
-			return devices;
+			return dcModelService.getDevices();
 		}
 	});
