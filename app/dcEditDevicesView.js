@@ -9,11 +9,15 @@ angular.module('dcApp')
 		};
 	})
 	.controller('dcEditDevicesViewController', function(dcModelService) {
-		var counter = 0;
+		this.newDeviceName = '';
+
+		this.isAddButtonDisabled = function() {
+			return this.newDeviceName.length == 0;
+		}
 
 		this.addButtonClicked = function() {
-			dcModelService.createDevice('device ' + counter);
-			counter++;
+			dcModelService.createDevice(this.newDeviceName);
+			this.newDeviceName = '';
 		}
 
 		this.getDevices = function() {
