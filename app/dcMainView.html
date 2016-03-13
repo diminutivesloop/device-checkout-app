@@ -1,1 +1,8 @@
-<dc-device-list></dc-device-list>
+<button ng-click='vm.editButtonClicked()' ng-if='!vm.isEditModeActive()'>
+	Edit
+</button>
+<button ng-click='vm.doneButtonClicked()' ng-if='vm.isEditModeActive()'>
+	Done
+</button>
+<dc-device-list ng-if='!vm.isEditModeActive()'></dc-device-list>
+<dc-edit-devices-view ng-if='vm.isEditModeActive()'></dc-device-list>

@@ -8,15 +8,18 @@ angular.module('dcApp')
 			scope: {}
 		};
 	})
-	.controller('dcMainViewController', function(dcModelService) {
-		var counter = 0;
+	.controller('dcMainViewController', function() {
+		var isEditModeActive = false;
 
-		this.addButtonClicked = function() {
-			dcModelService.createDevice('device ' + counter);
-			counter++;
+		this.editButtonClicked = function() {
+			isEditModeActive = true;
 		}
 
-		this.getDevices = function() {
-			return dcModelService.getDevices();
+		this.doneButtonClicked = function() {
+			isEditModeActive = false;
+		}
+
+		this.isEditModeActive = function() {
+			return isEditModeActive;
 		}
 	});

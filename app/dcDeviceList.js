@@ -9,13 +9,6 @@ angular.module('dcApp')
 		};
 	})
 	.controller('dcDeviceListController', function(dcModelService) {
-		var counter = 0;
-
-		this.addButtonClicked = function() {
-			dcModelService.createDevice('device ' + counter);
-			counter++;
-		}
-
 		this.getDevices = function() {
 			return dcModelService.getDevices();
 		}
