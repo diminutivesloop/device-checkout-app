@@ -11,5 +11,5 @@ angular.module('dcApp')
 	.controller('dcDeviceListController', function(dcModelService) {
 		this.getDevices = function() {
 			return dcModelService.getDevices();
-		}
+		};
 	});

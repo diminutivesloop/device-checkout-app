@@ -13,13 +13,13 @@ angular.module('dcApp')
 
 		this.editButtonClicked = function() {
 			isEditModeActive = true;
-		}
+		};
 
 		this.doneButtonClicked = function() {
 			isEditModeActive = false;
-		}
+		};
 
 		this.isEditModeActive = function() {
 			return isEditModeActive;
-		}
+		};
 	});

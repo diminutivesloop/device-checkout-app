@@ -13,14 +13,14 @@ angular.module('dcApp')
 
 		this.isAddButtonDisabled = function() {
 			return this.newDeviceName.length == 0;
-		}
+		};
 
 		this.addButtonClicked = function() {
 			dcModelService.createDevice(this.newDeviceName);
 			this.newDeviceName = '';
-		}
+		};
 
 		this.getDevices = function() {
 			return dcModelService.getDevices();
-		}
+		};
 	});
