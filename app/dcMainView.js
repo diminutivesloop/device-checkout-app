@@ -1,8 +1,8 @@
 angular.module('dcApp')
-	.directive('dcMainView', function() {
+	.directive('dcMainView', function($templateCache) {
 		return {
 			restrict: 'E',
-			templateUrl: 'app/dcMainView.html',
+			template: $templateCache.get('app/dcMainView.html'),
 			controller: 'dcMainViewController',
 			controllerAs: 'vm',
 			scope: {}
