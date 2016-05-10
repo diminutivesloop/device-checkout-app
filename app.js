@@ -8,4 +8,4 @@ var server = app.listen(3000, function() {
 	console.log('App listening on http://localhost:' + port);
 });
 
-app.use(express.static('./'));
+app.use(express.static('lib/'));
