@@ -20,6 +20,7 @@
     "build:js": "babel app/*.js temp/templateCacheModule.js -o lib/compiled.js",
     "build:vendor": "cp node_modules/angular/angular.js lib",
     "prebuild": "rm -rf lib && rm -rf temp",
-    "build": "npm run build:html && npm run build:js && npm run build:vendor && cp index.html lib"
+    "build": "npm run build:html && npm run build:js && npm run build:vendor && cp index.html lib",
+    "start": "node app.js"
   }
 }
