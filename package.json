@@ -16,11 +16,11 @@
     "env": "env",
     "prebuild:html": "mkdir -p temp",
     "build:html": "node scripts/templateCachePrep.js app/*.html",
-    "prebuild:js": "mkdir -p lib",
-    "build:js": "babel app/*.js temp/templateCacheModule.js -o lib/compiled.js",
-    "build:vendor": "cp node_modules/angular/angular.js lib",
-    "prebuild": "rm -rf lib && rm -rf temp",
-    "build": "npm run build:html && npm run build:js && npm run build:vendor && cp app/index.html lib",
+    "prebuild:js": "mkdir -p deploy",
+    "build:js": "babel app/*.js temp/templateCacheModule.js -o deploy/compiled.js",
+    "build:vendor": "cp node_modules/angular/angular.js deploy",
+    "prebuild": "rm -rf deploy && rm -rf temp",
+    "build": "npm run build:html && npm run build:js && npm run build:vendor && cp app/index.html deploy",
     "start": "node app.js"
   }
 }
