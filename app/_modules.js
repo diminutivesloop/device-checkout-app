@@ -1,1 +1,1 @@
-angular.module('dcApp', []);
+angular.module('dcApp', ['ngRoute']);
