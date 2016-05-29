@@ -33,8 +33,8 @@
     "build:js": "babel app/*.js temp/templateCacheModule.js -o deploy/compiled.js",
     "build:vendor": "cp node_modules/angular/angular.js node_modules/angular-route/angular-route.js deploy",
     "build:src": "npm run build:js && npm run build:index",
-    "prebuild": "rm -rf deploy && rm -rf temp && mkdir -p deploy && mkdir -p temp",
-    "build": "npm run build:src && npm run build:vendor",
+    "clean": "rm -rf deploy && rm -rf temp && mkdir -p deploy && mkdir -p temp",
+    "build": "npm run clean && npm run build:src && npm run build:vendor",
     "start": "npm run watch & nodemon app.js --watch ./deploy -e js,html"
   }
 }
