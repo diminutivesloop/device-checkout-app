@@ -16,7 +16,7 @@
     ]
   },
   "watch": {
-    "build:js": {
+    "build:src": {
       "patterns": [
         "app/**.html",
         "app/**.js"
@@ -27,13 +27,14 @@
   "scripts": {
     "env": "env",
     "watch": "npm-watch",
-    "prebuild:template": "mkdir -p temp",
+    "build:index": "cp app/index.html deploy",
     "build:template": "node scripts/templateCachePrep.js app/*.html",
-    "prebuild:js": "npm run build:template && mkdir -p deploy",
+    "prebuild:js": "npm run build:template",
     "build:js": "babel app/*.js temp/templateCacheModule.js -o deploy/compiled.js",
     "build:vendor": "cp node_modules/angular/angular.js node_modules/angular-route/angular-route.js deploy",
-    "prebuild": "rm -rf deploy && rm -rf temp",
-    "build": "npm run build:js && npm run build:vendor && cp app/index.html deploy",
+    "build:src": "npm run build:js && npm run build:index",
+    "prebuild": "rm -rf deploy && rm -rf temp && mkdir -p deploy && mkdir -p temp",
+    "build": "npm run build:src && npm run build:vendor",
     "start": "npm run watch & nodemon app.js --watch ./deploy -e js,html"
   }
 }
