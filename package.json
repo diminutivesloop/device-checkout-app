@@ -26,7 +26,7 @@
   },
   "scripts": {
     "env": "env",
-    "watch": "npm-watch",
+    "watch": "npm start -- --watch ./deploy -e js,html & npm-watch",
     "build:index": "cp app/index.html deploy",
     "build:template": "node scripts/templateCachePrep.js app/*.html",
     "prebuild:js": "npm run build:template",
@@ -35,6 +35,6 @@
     "build:src": "npm run build:js && npm run build:index",
     "clean": "rm -rf deploy && rm -rf temp && mkdir -p deploy && mkdir -p temp",
     "build": "npm run clean && npm run build:src && npm run build:vendor",
-    "start": "npm run watch & nodemon app.js --watch ./deploy -e js,html"
+    "start": "nodemon app.js"
   }
 }
