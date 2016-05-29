@@ -3,9 +3,11 @@ var fs = require('fs');
 var templateArray = [];
 
 process.argv.slice(2).forEach(function(path, index) {
-	var contents = fs.readFileSync(path, 'utf8');
-	templateArray.push({content: contents, path: path})
-})
+	if(path.indexOf('index.html') === -1) {
+		var contents = fs.readFileSync(path, 'utf8');
+		templateArray.push({content: contents, path: path})
+	}
+});
 
 var output = templatecache({
   entries: templateArray,
