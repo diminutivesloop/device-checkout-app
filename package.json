@@ -8,25 +8,17 @@
     "express": "^4.13.3",
     "ng-templatecache": "^0.1.4",
     "nodemon": "^1.9.2",
-    "npm-watch": "^0.1.4"
+    "onchange": "^2.5.0"
   },
   "babel": {
     "presets": [
       "es2015"
     ]
   },
-  "watch": {
-    "build:src": {
-      "patterns": [
-        "app/**.html",
-        "app/**.js"
-      ],
-      "extensions": "html,js"
-    }
-  },
   "scripts": {
     "env": "env",
-    "watch": "npm start -- --watch ./deploy -e js,html & npm-watch",
+    "watch:src": "onchange 'app/**' -i -- npm run build:src",
+    "watch": "npm start -- --watch ./deploy -e js,html & npm run watch:src",
     "build:index": "cp app/index.html deploy",
     "build:template": "node scripts/templateCachePrep.js app/*.html",
     "prebuild:js": "npm run build:template",
