@@ -22,10 +22,10 @@
     "build:index": "cp app/index.html deploy",
     "build:template": "node scripts/templateCachePrep.js app/*.html",
     "prebuild:js": "npm run build:template",
-    "build:js": "babel app/*.js temp/templateCacheModule.js -o deploy/compiled.js",
-    "build:vendor": "cp node_modules/angular/angular.js node_modules/angular-route/angular-route.js deploy",
+    "build:js": "babel app/*.js temp/templateCacheModule.js -o deploy/js/compiled.js",
+    "build:vendor": "cp node_modules/angular/angular.js node_modules/angular-route/angular-route.js deploy/js",
     "build:src": "npm run build:js && npm run build:index",
-    "clean": "rm -rf deploy && rm -rf temp && mkdir -p deploy && mkdir -p temp",
+    "clean": "rm -rf deploy && rm -rf temp && mkdir -p temp && mkdir -p deploy/js",
     "build": "npm run clean && npm run build:src && npm run build:vendor",
     "start": "nodemon app.js"
   }

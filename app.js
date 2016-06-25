@@ -1,8 +1,8 @@
 var express = require('express');
 var app = express();
 
-// app.use(express.static('deploy/'));
-app.get('*', function(req, res) {
+app.use('/js', express.static(__dirname + '/deploy/js'));
+app.use('/*', function(req, res) {
   res.sendFile('index.html', {root: __dirname + '/deploy/'});
 });
 
