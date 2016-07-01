@@ -7,7 +7,8 @@
     "glob": "^7.0.5",
     "ng-templatecache": "^0.1.4",
     "nodemon": "^1.9.2",
-    "onchange": "^2.5.0"
+    "onchange": "^2.5.0",
+    "rimraf": "^2.5.2"
   },
   "dependencies": {
     "angular": "^1.4.7",
@@ -28,7 +29,7 @@
     "build:js": "babel app/ temp/templateCacheModule.js --only=*.js -o deploy/js/compiled.js",
     "build:vendor": "cp node_modules/angular/angular.js node_modules/angular-route/angular-route.js deploy/js",
     "build:src": "npm run build:js && npm run build:index",
-    "clean": "rm -rf deploy && rm -rf temp && mkdir -p temp && mkdir -p deploy/js",
+    "clean": "rimraf deploy && rimraf temp && mkdir -p temp && mkdir -p deploy/js",
     "build": "npm run clean && npm run build:src && npm run build:vendor",
     "start": "nodemon app.js"
   }
