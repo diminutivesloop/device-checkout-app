@@ -9,7 +9,7 @@
     "nodemon": "^1.9.2",
     "onchange": "^2.5.0",
     "rimraf": "^2.5.2",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^0.5.1"
   },
   "dependencies": {
     "angular": "^1.4.7",
