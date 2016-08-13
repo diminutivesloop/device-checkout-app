@@ -8,8 +8,12 @@ angular.module('dcApp')
 			scope: {}
 		};
 	})
-	.controller('dcDevicesViewController', function(dcModelService) {
+	.controller('dcDevicesViewController', function(dcModelService, $location) {
 		this.getDevices = function() {
 			return dcModelService.getDevices();
+		};
+
+		this.addButtonClicked = function() {
+			$location.url('/devices/add');
 		};
 	});
