@@ -8,6 +8,15 @@ angular.module('dcApp')
 			scope: {}
 		};
 	})
-	.controller('dcAddDeviceViewController', function(dcModelService) {
-		
+	.controller('dcAddDeviceViewController', function(dcModelService, $location) {
+			this.nameFieldText = "";
+
+			this.saveButtonClicked = function() {
+				dcModelService.createDevice(this.nameFieldText);
+				$location.url('/');
+			};
+
+			this.cancelButtonClicked = function() {
+				$location.url('/');
+			};
 	});
