@@ -1,5 +1,5 @@
 angular.module('dcApp')
-	.directive('dcDevicesView', function($templateCache) {
+	.directive('dcDevicesView', function dcDevicesView($templateCache) {
 		return {
 			restrict: 'E',
 			template: $templateCache.get('app/dcDevicesView.html'),
@@ -8,7 +8,7 @@ angular.module('dcApp')
 			scope: {}
 		};
 	})
-	.controller('dcDevicesViewController', function(dcModelService, $location) {
+	.controller('dcDevicesViewController', function dcDevicesViewController(dcModelService, $location) {
 		this.getDevices = function() {
 			return dcModelService.getDevices();
 		};

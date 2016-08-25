@@ -1,5 +1,5 @@
 angular.module('dcApp')
-	.directive('dcAddDeviceView', function($templateCache) {
+	.directive('dcAddDeviceView', function dcAddDeviceView($templateCache) {
 		return {
 			restrict: 'E',
 			template: $templateCache.get('app/dcAddDeviceView.html'),
@@ -8,7 +8,7 @@ angular.module('dcApp')
 			scope: {}
 		};
 	})
-	.controller('dcAddDeviceViewController', function(dcModelService, $location) {
+	.controller('dcAddDeviceViewController', function dcAddDeviceViewController(dcModelService, $location) {
 			this.nameFieldText = "";
 
 			this.saveButtonClicked = function() {
