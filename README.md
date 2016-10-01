@@ -11,5 +11,8 @@ Simple webapp for tracking usage of company-owned testing devices
 - Run the express server on localhost: `npm start`
 - Run file watcher with the express server on localhost: `npm run watch`
 
+### Production Build Process
+- Build with minification: `npm run build:prod`
+
 ### Important To Note
 - Build process will not run successfully on Windows
